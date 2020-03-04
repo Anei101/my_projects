@@ -98,5 +98,17 @@ int main(void)
         // Toggle the LED.
         GPIO_PORTF_DATA_R ^=0x06;
 				
+				// Delay for a bit.
+				SysCtlDelay(2000000);	
+				
+				// Turn on the Blue and Green LED.
+        GPIO_PORTF_DATA_R |=0x0C;
+			
+        // Delay for a bit.
+				SysCtlDelay(2000000);	
+
+        // Toggle the LED.
+        GPIO_PORTF_DATA_R ^=0x0C;
+				
     }
 }
