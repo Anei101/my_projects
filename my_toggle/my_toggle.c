@@ -44,7 +44,7 @@ int main(void)
 		PortFunctionInit();
 	
     // Turn on the LED.
-    GPIO_PORTF_DATA_R |= 0x08;
+    GPIO_PORTF_DATA_R |= GREEN_MASK;
 
     
     //
