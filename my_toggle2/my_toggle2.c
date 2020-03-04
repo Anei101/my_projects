@@ -66,14 +66,14 @@ int main(void)
         // Delay for a bit.
 				SysCtlDelay(2000000);	
 			
-				// Turn on the Blue and Green LEDs.
-				GPIO_PORTF_DATA_R |= 0x0C;
+				// Turn on the Red, Blue, and Green LEDs.
+				GPIO_PORTF_DATA_R |= 0x0E;
 			
         // Delay for a bit.
 				SysCtlDelay(2000000);	
 
         // Toggle the LED.
-        GPIO_PORTF_DATA_R ^=0x0C;
+        GPIO_PORTF_DATA_R ^=0x0E;
 			
         // Delay for a bit.
 				SysCtlDelay(2000000);	
