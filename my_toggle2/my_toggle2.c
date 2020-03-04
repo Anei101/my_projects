@@ -2,8 +2,6 @@
 #include <stdbool.h>
 #include "inc/tm4c123gh6pm.h"
 #include "driverlib/sysctl.h"
-#include <time.h>
-#include <stdlib.h>
 
 #define 	RED_MASK 		  0x02
 #define 	BLUE_MASK 		0x04
@@ -59,7 +57,7 @@ int main(void)
 	
 		//initialize the GPIO ports	
 		PortFunctionInit();
-	
+		
     //
     // Loop forever.
     //
@@ -68,37 +66,37 @@ int main(void)
         // Delay for a bit.
 				SysCtlDelay(2000000);	
 			
-				// Turn on the red LED.
-				GPIO_PORTF_DATA_R |= 0x02;
+				// Turn on the Blue and Green LEDs.
+				GPIO_PORTF_DATA_R |= 0x0C;
 			
         // Delay for a bit.
 				SysCtlDelay(2000000);	
 
         // Toggle the LED.
-        GPIO_PORTF_DATA_R ^=RED_MASK;
+        GPIO_PORTF_DATA_R ^=0x0C;
 			
         // Delay for a bit.
 				SysCtlDelay(2000000);	
 
-        // Turn on the blue LED.
-        GPIO_PORTF_DATA_R =BLUE_MASK;
-			
-        // Delay for a bit.
-				SysCtlDelay(2000000);	
-
-        // Toggle the LED.
-        GPIO_PORTF_DATA_R ^=BLUE_MASK;
-        // Delay for a bit.
-				SysCtlDelay(2000000);	
-
-        // Turn on the blue LED.
-        GPIO_PORTF_DATA_R =GREEN_MASK;
+        // Turn on the Green and Red LED.
+        GPIO_PORTF_DATA_R |=0x0A;
 			
         // Delay for a bit.
 				SysCtlDelay(2000000);	
 
         // Toggle the LED.
-        GPIO_PORTF_DATA_R ^=GREEN_MASK;
+        GPIO_PORTF_DATA_R ^=0x0A;
+        // Delay for a bit.
+				SysCtlDelay(2000000);	
+
+        // Turn on the Blue and Red LED.
+        GPIO_PORTF_DATA_R |=0x06;
+			
+        // Delay for a bit.
+				SysCtlDelay(2000000);	
+
+        // Toggle the LED.
+        GPIO_PORTF_DATA_R ^=0x06;
 				
     }
 }
