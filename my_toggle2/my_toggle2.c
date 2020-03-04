@@ -2,6 +2,8 @@
 #include <stdbool.h>
 #include "inc/tm4c123gh6pm.h"
 #include "driverlib/sysctl.h"
+#include <time.h>
+#include <stdlib.h>
 
 #define 	RED_MASK 		  0x02
 #define 	BLUE_MASK 		0x04
@@ -97,5 +99,6 @@ int main(void)
 
         // Toggle the LED.
         GPIO_PORTF_DATA_R ^=GREEN_MASK;
+				
     }
 }
