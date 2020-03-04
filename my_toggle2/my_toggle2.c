@@ -3,9 +3,6 @@
 #include "inc/tm4c123gh6pm.h"
 #include "driverlib/sysctl.h"
 
-#define 	RED_MASK 		  0x02
-#define 	BLUE_MASK 		0x04
-#define 	GREEN_MASK 		0x08
 //*****************************************************************************
 //
 //!
