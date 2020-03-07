@@ -60,12 +60,12 @@ int main(void)
         if((GPIO_PORTF_DATA_R&0x01)==0x00) //SW2 is pressed
 				{
 						// Turn on the LED.
-						GPIO_PORTF_DATA_R |= BLUE_MASK;
+						GPIO_PORTF_DATA_R |= 0x04;
 				}
 				else
 				{
 						// Turn off the LED.
-						GPIO_PORTF_DATA_R &= ~BLUE_MASK;
+						GPIO_PORTF_DATA_R &= ~0x04;
 				}
     }
 }
