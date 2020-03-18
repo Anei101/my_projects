@@ -86,7 +86,9 @@ int main(void)
     //
     while(1)
     {
-	int r = (rand() % 7);
+			
+				// Generate a random integer
+				int r = (rand() % 7);
 	
         // Delay for a bit.
 				SysCtlDelay(2000000);
@@ -145,28 +147,28 @@ int main(void)
 			
       else if(r == 4) {
 				
-				// Turn on the red/blue LEDs.
+				// Turn on the red/green LEDs.
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x02);
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x08);
 			
         // Delay for a bit.
 				SysCtlDelay(2000000);	
 				
-				// Turn off the red/blue LEDs.
+				// Turn off the red/green LEDs.
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00);
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x00);
 			}
 			
       else if(r == 5) {
 				
-				// Turn on the red/blue LEDs.
+				// Turn on the blue/green LEDs.
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x04);
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x08);
 			
         // Delay for a bit.
 				SysCtlDelay(2000000);	
 				
-				// Turn off the red/blue LEDs.
+				// Turn off the blue/green LEDs.
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x00);
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x00);
 			}
