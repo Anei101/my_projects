@@ -46,6 +46,8 @@
 #include "driverlib/rom_map.h"
 #include "driverlib/gpio.h"
 
+#include <stdlib.h>
+
 //*****************************************************************************
 void
 PortFunctionInit(void)
@@ -78,17 +80,20 @@ int main(void)
 	
 		//initialize the GPIO ports	
 		PortFunctionInit();
-	
-
     
     //
     // Loop forever.
     //
     while(1)
     {
+	int r = (rand() % 7);
+	
         // Delay for a bit.
 				SysCtlDelay(2000000);
 			
+			
+			if (r == 0) {
+				
 				// Turn on the red LED.
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x02);
 			
@@ -97,10 +102,35 @@ int main(void)
 			
 				// Turn off the red LED.
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00);
+			}
+			
+      else if(r == 1) {
+				
+				// Turn on the blue LED.
+				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x04);
 			
         // Delay for a bit.
 				SysCtlDelay(2000000);	
 			
+				// Turn off the blue LED.
+				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x00);
+			}
+			
+			else if(r == 2) {
+				
+				// Turn on the green LED.
+				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x08);
+			
+        // Delay for a bit.
+				SysCtlDelay(2000000);	
+			
+				// Turn off the green LED.
+				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x00);
+			}
+			
+			
+      else if(r == 3) {
+				
 				// Turn on the red/blue LEDs.
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x02);
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x04);
@@ -111,62 +141,38 @@ int main(void)
 				// Turn off the red/blue LEDs.
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00);
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x00);
+			}
+			
+      else if(r == 4) {
 				
-        // Delay for a bit.
-				SysCtlDelay(2000000);	
-
-				// Turn on the blue LED.
-				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x04);
-			
-        // Delay for a bit.
-				SysCtlDelay(2000000);	
-			
-				// Turn off the blue LED.
-				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x00);
-				
-        // Delay for a bit.
-				SysCtlDelay(2000000);	
-			
-				// Turn on the blue/green LEDs.
-				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x04);
-				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x08);
-			
-        // Delay for a bit.
-				SysCtlDelay(2000000);	
-				
-				// Turn off the blue/green LEDs.
-				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x00);
-				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x00);
-				
-        // Delay for a bit.
-				SysCtlDelay(2000000);	
-
-				// Turn on the green LED.
-				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x08);
-			
-        // Delay for a bit.
-				SysCtlDelay(2000000);	
-			
-				// Turn off the green LED.
-				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x00);
-				
-        // Delay for a bit.
-				SysCtlDelay(2000000);	
-			
-				// Turn on the red/green LEDs.
+				// Turn on the red/blue LEDs.
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x02);
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x08);
 			
         // Delay for a bit.
 				SysCtlDelay(2000000);	
 				
-				// Turn off the red/green LEDs.
+				// Turn off the red/blue LEDs.
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00);
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x00);
+			}
+			
+      else if(r == 5) {
 				
+				// Turn on the red/blue LEDs.
+				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x04);
+				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x08);
+			
         // Delay for a bit.
 				SysCtlDelay(2000000);	
+				
+				// Turn off the red/blue LEDs.
+				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x00);
+				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x00);
+			}
 			
+      else if(r == 6) {
+				
 				// Turn on the red/blue/green LEDs.
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x02);
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x04);
@@ -179,5 +185,7 @@ int main(void)
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00);
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x00);
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x00);
+			}
+
     }
 }
